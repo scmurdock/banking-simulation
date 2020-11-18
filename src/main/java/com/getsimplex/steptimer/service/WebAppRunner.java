@@ -20,11 +20,8 @@ public class WebAppRunner {
     public static void main(String[] args){
 
         BankingSimulationDataDriver.generateTestCustomers(30);
-        MessageIntake.route(new StartReceivingKafkaMessages());//connect to customer-risk topic
 
         MessageIntake.route(new ContinueBalanceSimulation());//balance simulation for bank account exercises
-
-        Spark.port(getHerokuAssignedPort());
 
         createTestUser();
 
@@ -170,14 +167,6 @@ public class WebAppRunner {
             return user.get().getUserName();
         }
 
-    }
-	
-    private static int getHerokuAssignedPort() {
-        ProcessBuilder processBuilder = new ProcessBuilder();
-        if (processBuilder.environment().get("PORT") != null) {
-            return Integer.parseInt(processBuilder.environment().get("PORT"));
-        }
-        return Configuration.getConfiguration().getInt("suresteps.port"); //return default port if heroku-port isn't set (i.e. on localhost)
     }
 
     private static void createTestUser(){//for Udacity course local use only
