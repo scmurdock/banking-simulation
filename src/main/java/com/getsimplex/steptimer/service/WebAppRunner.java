@@ -6,7 +6,6 @@ package com.getsimplex.steptimer.service;
 
 
 import com.getsimplex.steptimer.model.*;
-import com.getsimplex.steptimer.utils.*;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
@@ -21,7 +20,9 @@ public class WebAppRunner {
 
         BankingSimulationDataDriver.generateTestCustomers(30);
 
-        MessageIntake.route(new ContinueBalanceSimulation());//balance simulation for bank account exercises
+        MessageIntake.route(new ContinueBankingSimulation());//balance simulation for bank account exercises
+
+        Spark.port(1111);
 
         createTestUser();
 

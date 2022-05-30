@@ -22,11 +22,6 @@ public class BankingSimulationDataDriver {
 
     public static synchronized void generateTestCustomers(int numberOfUsers) {
 
-        try {
-            Thread.sleep(120000);//wait to create the customers to avoid issues with redis kafka source connector missing the updates
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
         testCustomers.clear();
         int nextCustomerAge = 55;
         for (int i = 0; i < numberOfUsers - 1; i++) {

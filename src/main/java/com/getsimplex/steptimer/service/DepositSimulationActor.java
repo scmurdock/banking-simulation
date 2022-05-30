@@ -1,8 +1,7 @@
 package com.getsimplex.steptimer.service;
 
 import akka.actor.UntypedActor;
-import com.getsimplex.steptimer.model.ContinueBalanceSimulation;
-import com.getsimplex.steptimer.service.BankingSimulationDataDriver;
+import com.getsimplex.steptimer.model.ContinueBankingSimulation;
 
 
 import java.util.logging.Logger;
@@ -16,10 +15,10 @@ public class DepositSimulationActor extends UntypedActor {
 
     public void onReceive(Object object){
 
-        if (object instanceof ContinueBalanceSimulation){
+        if (object instanceof ContinueBankingSimulation){
             try {
                 BankingSimulationDataDriver.createDeposits();
-                self().tell(new ContinueBalanceSimulation(), self());//continue simulation
+                self().tell(new ContinueBankingSimulation(), self());//continue simulation
             } catch (Exception e){
                 logger.severe(e.getMessage());
             }

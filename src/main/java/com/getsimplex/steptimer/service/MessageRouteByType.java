@@ -38,7 +38,7 @@ public class MessageRouteByType extends UntypedActor {
         if (object instanceof KafkaTopicMessage){
             kafkaTopicProducerActor.tell(object, self());
         }
-        else if (object instanceof ContinueBalanceSimulation){
+        else if (object instanceof ContinueBankingSimulation){
             balanceSimulationActor.tell(object, self());
             atmVisitsSimulationActor.tell(object, self());
             withdrawalSimulationActor.tell(object, self());

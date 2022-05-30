@@ -31,9 +31,6 @@ public class CreateNewCustomer {
         Predicate<Customer> findExistingCustomerPredicate = customer -> customer.getEmail().equals(newCustomer.getEmail());
         Optional<Customer> matchingCustomer = customers.stream().filter(findExistingCustomerPredicate).findAny();
 
-        if (matchingCustomer.isPresent()){
-            throw new Exception("Customer already exists");
-        }
 
         if (newCustomer != null && !newCustomer.getCustomerName().isEmpty()) {
             //SAVE USER TO REDIS

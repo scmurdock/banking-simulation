@@ -1,4 +1,4 @@
 package com.getsimplex.steptimer.model;
 
-public class ContinueBalanceSimulation {
+public class ContinueBankingSimulation {
 }
