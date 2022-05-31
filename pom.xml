@@ -112,7 +112,7 @@
         <repository>
             <id>github</id>
             <name>GitHub scmurdock Apache Maven Packages</name>
-            <url>https://maven.pkg.github.com/scmurdock/udacity-stedi</url>
+            <url>https://maven.pkg.github.com/scmurdock/banking-simulation</url>
         </repository>
     </distributionManagement>
 
