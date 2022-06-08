@@ -10,7 +10,8 @@ public class Customer {
     private String phone;
     private String birthDay;
     private String accountNumber;
-    private String location;
+    private Integer homeLocationId;
+    private PrivacyOptInRecord privacyOptInRecord;
 
     public String getAccountNumber() {
         return accountNumber;
@@ -53,11 +54,19 @@ public class Customer {
         this.birthDay = birthDay;
     }
 
-    public String getLocation() {
-        return location;
+    public Integer getHomeLocationId() {
+        return homeLocationId;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setHomeLocationId(Integer homeLocationId) {
+        this.homeLocationId = homeLocationId;
+    }
+
+    public PrivacyOptInRecord getPrivacyOptIn() {
+        return privacyOptInRecord;
+    }
+
+    public void setPrivacyOptIn(PrivacyOptInRecord privacyOptInRecord) {
+        this.privacyOptInRecord = privacyOptInRecord;
     }
 }

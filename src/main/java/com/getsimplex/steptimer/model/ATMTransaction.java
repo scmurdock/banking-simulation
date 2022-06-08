@@ -6,7 +6,7 @@ public class ATMTransaction {
 
     private Date transactionDate;
     private Long transactionId;
-    private String atmLocation;
+    private Integer atmLocationId;
 
     public Date getTransactionDate() {
         return transactionDate;
@@ -24,11 +24,11 @@ public class ATMTransaction {
         this.transactionId = transactionId;
     }
 
-    public String getAtmLocation() {
-        return atmLocation;
+    public Integer getAtmLocationId() {
+        return atmLocationId;
     }
 
-    public void setAtmLocation(String atmLocation) {
-        this.atmLocation = atmLocation;
+    public void setAtmLocationId(Integer atmLocationId) {
+        this.atmLocationId = atmLocationId;
     }
 }

@@ -18,6 +18,7 @@ public class DepositSimulationActor extends UntypedActor {
         if (object instanceof ContinueBankingSimulation){
             try {
                 BankingSimulationDataDriver.createDeposits();
+                BankingSimulationDataDriver.createPrivacyUpdates();
                 self().tell(new ContinueBankingSimulation(), self());//continue simulation
             } catch (Exception e){
                 logger.severe(e.getMessage());

@@ -5,7 +5,7 @@ import java.util.Date;
 public class CustomerLocation {
 
     private String accountNumber;
-    private String location;
+    private Integer currentLocationId;
     private Date locationDate;
 
     public String getAccountNumber() {
@@ -16,12 +16,12 @@ public class CustomerLocation {
         this.accountNumber = accountNumber;
     }
 
-    public String getLocation() {
-        return location;
+    public Integer getCurrentLocationId() {
+        return currentLocationId;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setCurrentLocationId(Integer currentLocationId) {
+        this.currentLocationId = currentLocationId;
     }
 
     public Date getLocationDate() {
